@@ -6,7 +6,7 @@ version="${version:-8u472-b08}";
 push="${push:-false}"
 repo="${repo:-dyrnq}"
 image_name="${image_name:-jenkins}"
-platforms="${platforms:-linux/amd64,linux/arm64/v8,linux/arm/v7,linux/ppc64le,linux/s390x}"
+platforms="${platforms:-linux/amd64,linux/arm64/v8}"
 curl_opts="${curl_opts:-}"
 
 
