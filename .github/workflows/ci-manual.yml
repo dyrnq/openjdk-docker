@@ -1,4 +1,4 @@
-name: ci-manual
+name: ci-manual - ${{ github.event.inputs.version }}
 
 on:
   workflow_dispatch:
