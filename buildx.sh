@@ -61,5 +61,5 @@ docker buildx build \
 --build-arg pkg=$pkg \
 --file ./8/jdk/debian/Dockerfile.hotspot.releases.full . \
 $latest_tag
-docker run -it --rm $repo/$image_name:${pkg}${version}-debian bash -c "java --version"
+
 done
