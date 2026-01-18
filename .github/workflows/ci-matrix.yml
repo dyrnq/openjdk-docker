@@ -1,0 +1,82 @@
+name: ci-matrix
+
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        vers:
+        - "8u322-b06"
+        - "8u332-b09"
+        - "8u342-b07"
+        - "8u345-b01"
+        - "8u352-b08"
+        - "8u362-b09"
+        - "8u372-b07"
+        - "8u382-b05"
+        - "8u392-b08"
+        - "8u402-b06"
+        - "8u412-b08"
+        - "8u422-b05"
+        - "8u432-b06"
+        - "8u442-b06"
+        - "8u452-b09"
+        - "8u462-b08"
+        - "8u472-b08"
+    steps:
+      # - name: Free Disk Space (Ubuntu)
+      #   uses: jlumbroso/free-disk-space@main
+      #   with:
+      #     # this might remove tools that are actually needed,
+      #     # if set to "true" but frees about 6 GB
+      #     tool-cache: true
+          
+      #     # all of these default to true, but feel free to set to
+      #     # "false" if necessary for your workflow
+      #     android: true
+      #     dotnet: true
+      #     haskell: true
+      #     large-packages: true
+      #     docker-images: true
+      #     swap-storage: true
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      -
+        name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v3
+      -
+        name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+      -
+        name: Inspect builder
+        run: |
+          echo "Name:      ${{ steps.buildx.outputs.name }}"
+          echo "Endpoint:  ${{ steps.buildx.outputs.endpoint }}"
+          echo "Status:    ${{ steps.buildx.outputs.status }}"
+          echo "Flags:     ${{ steps.buildx.outputs.flags }}"
+          echo "Platforms: ${{ steps.buildx.outputs.platforms }}"
+
+      - name: Build dockerfile (with not push)
+        run: |
+          version="${{ matrix.vers }}"
+          echo "${version}"
+          ./buildx.sh --version ${version} --push false --repo ${{ secrets.DOCKER_USERNAME }} --image-name openjdk8
+
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build dockerfile (with push)
+        run: |
+          version="${{ matrix.vers }}"
+          echo "${version}"
+          ./buildx.sh --version ${version} --push true --repo ${{ secrets.DOCKER_USERNAME }} --image-name openjdk8
