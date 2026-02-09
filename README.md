@@ -12,6 +12,8 @@ docker pull dyrnq/openjdk8:jdk8u452-b09-debian
 tags
 ```bash
 ### JDK
+dyrnq/openjdk8:jdk8u302-b08-debian
+dyrnq/openjdk8:jdk8u312-b07-debian
 dyrnq/openjdk8:jdk8u322-b06-debian
 dyrnq/openjdk8:jdk8u332-b09-debian
 dyrnq/openjdk8:jdk8u342-b07-debian
@@ -29,7 +31,10 @@ dyrnq/openjdk8:jdk8u442-b06-debian
 dyrnq/openjdk8:jdk8u452-b09-debian
 dyrnq/openjdk8:jdk8u462-b08-debian
 dyrnq/openjdk8:jdk8u472-b08-debian
+dyrnq/openjdk8:jdk8u482-b08-debian
 ### JRE
+dyrnq/openjdk8:jre8u302-b08-debian
+dyrnq/openjdk8:jre8u312-b07-debian
 dyrnq/openjdk8:jre8u322-b06-debian
 dyrnq/openjdk8:jre8u332-b09-debian
 dyrnq/openjdk8:jre8u342-b07-debian
@@ -47,6 +52,7 @@ dyrnq/openjdk8:jre8u442-b06-debian
 dyrnq/openjdk8:jre8u452-b09-debian
 dyrnq/openjdk8:jre8u462-b08-debian
 dyrnq/openjdk8:jre8u472-b08-debian
+dyrnq/openjdk8:jre8u482-b08-debian
 ```
 
 
