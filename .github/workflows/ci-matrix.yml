@@ -9,6 +9,8 @@ jobs:
       fail-fast: false
       matrix:
         vers:
+        - "8u302-b08"
+        - "8u312-b07"
         - "8u322-b06"
         - "8u332-b09"
         - "8u342-b07"
@@ -26,6 +28,7 @@ jobs:
         - "8u452-b09"
         - "8u462-b08"
         - "8u472-b08"
+        - "8u482-b08"
     steps:
       # - name: Free Disk Space (Ubuntu)
       #   uses: jlumbroso/free-disk-space@main
