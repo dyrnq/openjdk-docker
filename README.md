@@ -5,8 +5,8 @@ Only build openjdk8 with debian trixie version. see [Dockerfile](https://github.
 e.g.
 
 ```bash
-docker pull adoptopenjdk/openjdk8:jdk8u452-b09-debian
-docker pull dyrnq/openjdk8:jdk8u452-b09-debian
+docker pull adoptopenjdk/openjdk8:jdk8u492-b09-debian
+docker pull dyrnq/openjdk8:jdk8u492-b09-debian
 ```
 
 tags
@@ -28,10 +28,11 @@ dyrnq/openjdk8:jdk8u412-b08-debian
 dyrnq/openjdk8:jdk8u422-b05-debian
 dyrnq/openjdk8:jdk8u432-b06-debian
 dyrnq/openjdk8:jdk8u442-b06-debian
-dyrnq/openjdk8:jdk8u452-b09-debian
+dyrnq/openjdk8:jdk8u492-b09-debian
 dyrnq/openjdk8:jdk8u462-b08-debian
 dyrnq/openjdk8:jdk8u472-b08-debian
 dyrnq/openjdk8:jdk8u482-b08-debian
+dyrnq/openjdk8:jdk8u492-b09-debian
 ### JRE
 dyrnq/openjdk8:jre8u302-b08-debian
 dyrnq/openjdk8:jre8u312-b07-debian
@@ -53,6 +54,7 @@ dyrnq/openjdk8:jre8u452-b09-debian
 dyrnq/openjdk8:jre8u462-b08-debian
 dyrnq/openjdk8:jre8u472-b08-debian
 dyrnq/openjdk8:jre8u482-b08-debian
+dyrnq/openjdk8:jre8u492-b09-debian
 ```
 
 
