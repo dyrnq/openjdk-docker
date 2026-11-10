@@ -32,6 +32,7 @@ jobs:
         - "8u492-b09"
         - "8u502-b07"
         - "8u504-b01"
+        - "8u512-b09"
     steps:
       # - name: Free Disk Space (Ubuntu)
       #   uses: jlumbroso/free-disk-space@main
